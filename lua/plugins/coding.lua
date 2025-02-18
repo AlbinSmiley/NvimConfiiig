@@ -91,14 +91,14 @@ return {
          require("ibl").setup()
       end,
    },
-   {
-      "github/copilot.vim",
-      config = function()
-         vim.cmd('imap <silent><script><expr> <C-CR> copilot#Accept("\\<CR>")')
-         vim.g.copilot_no_tab_map = true
-         -- vim.g.copilot_enabled = true
-      end,
-   },
+   -- {
+   --    "github/copilot.vim",
+   --    config = function()
+   --       vim.cmd('imap <silent><script><expr> <C-CR> copilot#Accept("\\<CR>")')
+   --       vim.g.copilot_no_tab_map = true
+   --       -- vim.g.copilot_enabled = true
+   --    end,
+   -- },
    {
       "shortcuts/no-neck-pain.nvim",
       version = "*",

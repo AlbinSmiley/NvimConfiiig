@@ -10,8 +10,8 @@ return {
          vim.g.tex_flavor = "latex"
          vim.g.tex_conceal = "abdmg"
          vim.g.vimtex_compiler_method = "latexmk"
-         vim.g.vimtex_view_method = "skim"
-         vim.g.latex_view_general_viewer = "skim"
+         vim.g.vimtex_view_method = "zathura"
+         vim.g.latex_view_general_viewer = "zathura"
          vim.cmd("call vimtex#init()")
       end,
    },

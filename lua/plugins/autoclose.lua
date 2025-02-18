@@ -12,7 +12,7 @@ return {
                escape = true,
                close = true,
                pair = "''",
-               disabled_filetypes = { "markdown", "tex"},
+               disabled_filetypes = { "markdown", "tex", "csv"},
             },
             ["`"] = {
                escape = false,

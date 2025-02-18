@@ -99,6 +99,18 @@ map("n", "<C-c>", "<C-w>c", {})
 
 map("n", "<leader>z", ":ZenMode<CR>", {})
 
+-- Open compiler
+vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+
+-- Redo last selected option
+vim.api.nvim_set_keymap('n', '<S-F6>',
+     "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
+  .. "<cmd>CompilerRedo<cr>",
+ { noremap = true, silent = true })
+
+-- Toggle compiler results
+vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+
 -- local on_attach = function(_, bufnr)
 --   -- NOTE: Remember that lua is a real programming language, and as such it is possible
 --   -- to define small helper and utility functions so you don't have to repeat yourself

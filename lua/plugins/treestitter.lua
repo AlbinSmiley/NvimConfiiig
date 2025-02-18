@@ -13,7 +13,7 @@ return {
                'javascript',
                'markdown',
                'markdown_inline',
-               'php',
+               -- 'php',
                'c',
                'r',
                'cpp',
@@ -22,8 +22,9 @@ return {
                'html',
                'bibtex',
                'json',
-               'json5',
-               'swift'
+               'make',
+               -- 'json5',
+               -- 'swift'
             },
             highlight = {
                enable = true,

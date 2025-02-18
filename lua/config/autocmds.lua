@@ -74,6 +74,21 @@ vim.api.nvim_create_autocmd("BufEnter", {
    end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+   pattern = "*.cpp",
+   callback = function()
+      vim.keymap.set("n", "<Leader>cm", function()
+         -- local filename = vim.fn.expand('%')
+         local filenameWithoutExtension = vim.fn.expand('%:t:r')
+         local filedir = vim.fn.expand('%:p:h')
+         local currentDir = vim.fn.getcwd()
+         vim.cmd("cd " .. filedir)
+         vim.cmd("terminal make && ./".. filenameWithoutExtension)
+         vim.cmd("cd " .. currentDir)
+      end, { silent = true, buffer = true })
+   end,
+ })
+
 -- Configure l'indentation pour les fichiers Lua
 vim.api.nvim_create_autocmd("BufEnter", {
    -- Applique cette configuration uniquement aux fichiers Lua

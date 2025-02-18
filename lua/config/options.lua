@@ -34,8 +34,8 @@ vim.o.completeopt = 'menuone,noselect' -- Améliore l'expérience de complétion
 
 vim.o.termguicolors = true -- Active le support des couleurs 24 bits dans le terminal
 
-vim.cmd[[let php_htmlInStrings = 1]] -- Active le surlignage HTML dans les chaînes PHP
-vim.cmd[[let html_phpInStrings = 1]] -- Active le surlignage PHP dans les chaînes HTML
+-- vim.cmd[[let php_htmlInStrings = 1]] -- Active le surlignage HTML dans les chaînes PHP
+-- vim.cmd[[let html_phpInStrings = 1]] -- Active le surlignage PHP dans les chaînes HTML
 
 -- Les commandes commentées configureraient la transparence de l'arrière-plan pour certains éléments
 -- Configure la transparence
