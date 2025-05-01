@@ -39,22 +39,8 @@ return {
    },
    {
       "akinsho/bufferline.nvim",
-      version = "v3.*",
+      version = "*",
       dependencies = "nvim-tree/nvim-web-devicons",
-      opts = {
-         options = {
-            separator_style = "slant",
-            mode = "tabs",
-            offsets = {
-               {
-                  filetype = "NvimTree",
-                  text = " File Explorer",
-                  highlight = "Directory",
-                  separator = false,
-               },
-            },
-         },
-      },
    },
    {
       "utilyre/barbecue.nvim",
