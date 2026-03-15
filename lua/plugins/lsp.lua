@@ -48,7 +48,7 @@ return {
       dependencies = { "hrsh7th/cmp-nvim-lsp" },
       config = function()
          local capabilities = require("cmp_nvim_lsp").default_capabilities()
-         require("lspconfig").lua_ls.setup({
+         vim.lsp.config("lua_ls",{
             capabilities = capabilities,
             settings = {
                Lua = {
@@ -59,16 +59,17 @@ return {
             },
          })
 
-         require("lspconfig").tailwindcss.setup({
+         vim.lsp.config("tailwindcss",{
             on_attach = function()
                require("tailwindcss-colors").buf_attach(0)
             end,
          })
 
          for _, language in pairs(languages) do
-            require("lspconfig")[language].setup({
-               capabilities = capabilities,
-            })
+            -- require("lspconfig")[language].setup({
+            --    capabilities = capabilities,
+            -- })
+            vim.lsp.enable(language)
          end
 
          vim.keymap.set(
