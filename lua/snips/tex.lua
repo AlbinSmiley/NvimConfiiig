@@ -30,6 +30,20 @@ local in_mathzone = function()
 end
 
 return {
+	s({trig="$"},
+		fmta(
+			"\\[\n\t<>\n\\]",
+			{i(1)}
+		)
+	),
+	s({trig="||",snippetType="autosnippet", condition=in_mathzone},
+		fmta(
+			"\\norm{<>}",
+			{i(1)}
+		)
+	),
+
+
 	s({trig="$$", snippetType="autosnippet"},
 		fmta(
 			"\\(<>\\)",

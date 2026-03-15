@@ -75,7 +75,37 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
+   pattern = "*.lean",
+   callback = function()
+      vim.keymap.set("n", "<Leader>e", function()
+         local filename = vim.fn.expand('%')
+         -- local filenameWithoutExtension = vim.fn.expand('%:t:r')
+         local filedir = vim.fn.expand('%:p:h')
+         local currentDir = vim.fn.getcwd()
+         vim.cmd("cd " .. filedir)
+         vim.cmd("terminal lean --run " .. filename)
+         vim.cmd("cd " .. currentDir)
+      end, { silent = true, buffer = true })
+   end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
    pattern = "*.cpp",
+   callback = function()
+      vim.keymap.set("n", "<Leader>cm", function()
+         -- local filename = vim.fn.expand('%')
+         local filenameWithoutExtension = vim.fn.expand('%:t:r')
+         local filedir = vim.fn.expand('%:p:h')
+         local currentDir = vim.fn.getcwd()
+         vim.cmd("cd " .. filedir)
+         vim.cmd("terminal make && ./".. filenameWithoutExtension)
+         vim.cmd("cd " .. currentDir)
+      end, { silent = true, buffer = true })
+   end,
+ })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+   pattern = "*.cc",
    callback = function()
       vim.keymap.set("n", "<Leader>cm", function()
          -- local filename = vim.fn.expand('%')
@@ -122,6 +152,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
    callback = function()
       -- Définit une touche pour exécuter le script Python courant dans un terminal
       vim.keymap.set("n", "<Leader>e", ":terminal python3 %<CR>", { silent = true })
+   end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+   -- Applique cette configuration uniquement aux fichiers Python
+   pattern = { "*.rs" },
+   callback = function()
+      vim.keymap.set("n", "<Leader>e", ":term cargo run <CR>", { silent = true })
    end,
 })
 

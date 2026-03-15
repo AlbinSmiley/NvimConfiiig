@@ -104,5 +104,13 @@ return {
 	{
 	t({"\\"}),
 	}),
+	s({trig="<<", snippetType="autosnippet"},
+	{
+	t({"«"}),
+	}),
+	s({trig=">>", snippetType="autosnippet"},
+	{
+	t({"»"}),
+	}),
 }
 
